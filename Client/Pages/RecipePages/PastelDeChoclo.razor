@@ -1,0 +1,185 @@
+﻿@page "/pastelDeChoclo"
+
+<PageTitle>Pastel de Choclo</PageTitle>
+
+
+
+
+<div class="text-center">
+
+    @{
+
+        var title = "Pastel de Choclo";
+        var description = "Chilean Corn Casserole";
+        var reference = "https://www.lafujimama.com/pastel-de-choclo/";
+
+        var ingredients1 = new string[]
+        {
+        "1 pound ground beef",
+        "2 large onions, chopped",
+        "2 teaspoons olive oil",
+        "2 garlic cloves, finely chopped",
+        "1 Tablespoon beef bouillon powder",
+        "1/2 teaspoon garlic salt",
+        "1 1/2 teaspoons paprika",
+        "1/2 teaspoon ground cumin",
+        "1/2 teaspoon dried oregano"
+        };
+
+        var ingredients2 = new string[]
+        {
+        "40 oz corn kernels (thawed, if frozen)",
+        "1 (14.75 oz) can creamed corn",
+        "3/4 teaspoon dried basil",
+        "3 Tablespoons vegetable shortening",
+        "1 1/2 teaspoons beef bouillon powder",
+        "1/2 teaspoon fine grain sea salt"
+        };
+
+        var ingredients3 = new string[]
+        {
+        "2 large hardboiled eggs, cut into thin slices",
+        "3 oz black olives, sliced",
+        "Granulated sugar, to lightly sprinkle over the top"
+        };
+
+        var steps1 = new string[]
+        {
+        "Saute the ground beef and chopped onions in the 2 teaspoons of olive oil over medium high heat in a large saute pan.",
+        "When the beef has all browned, add the garlic, 1 tablespoon beef bouillon powder, garlic salt, paprika, ground cumin, and oregano.",
+        "Continue to cook until the meat is cooked through, then taste for seasoning and add salt if necessary.",
+        "Then reduce the heat to medium low and simmer until the onions are very soft, and no crunch remains.",
+        "Remove the pan from the heat."
+        };
+
+
+        var steps2 = new string[]
+        {
+        "Put the corn kernels, creamed corn, and dried basil in a blender in batches and pulse until the corn is pureed, but not completely smooth.",
+        "Pour the corn puree into a large pot and add the shortening, 1 1/2 teaspoons beef bouillon powder, and fine grain sea salt.",
+        "Cook the corn mixture over medium-high heat until it comes to a boil.",
+        " Once it comes to a boil, continue letting it cook for 5 more minutes, stirring constantly to prevent it from burning",
+        "After the five minutes, remove the pot from the heat."
+        };
+
+        var steps3 = new string[]
+        {
+        "Cover the bottom of the greased baking dish with a thin layer of the corn topping.",
+        "Spread all of the beef filling over the corn layer.",
+        "Scatter the sliced hardboiled eggs and olives over the meat filling.",
+        "Finish by topping everything with the remaining corn topping.",
+        "Use the tines of a fork to make grooves in the top of the corn topping.",
+        "Sprinkle a light layer of granulated sugar over the top."
+        };
+
+        var steps4 = new string[]
+        {
+        "Preheat the oven to 350 degrees Fahrenheit. Lightly grease a 13×9-inch baking dish.",
+        "Bake the pastel de choclo in the preheated oven for 30 minutes to heat through (bubbles should be breaking the surface on the sides of the baking dish).",
+        "Change the oven to broil (high broil) and cook until the top of the pastel de choclo is golden brown.",
+        "Remove the baking dish from the oven and let it sit for 10 minutes before serving."
+        };
+
+    }
+</div>
+
+
+
+<body>
+    <div>
+        <h1>@title</h1>
+        <p></p>
+
+        <h5>Description:</h5>
+        <div>@description</div>
+        <p></p>
+
+
+        <h5>Ingredients for Beef and Onion Filling:</h5>
+        <div>
+            <ul>
+                @foreach (var ingredient in ingredients1)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+
+        <h5>Ingredients for Corn Topping:</h5>
+        <div>
+            <ul>
+                @foreach (var ingredient in ingredients2)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+
+        <h5>Ingredients for Assembly:</h5>
+        <div>
+            <ul>
+                @foreach (var ingredient in ingredients3)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+
+        <h5>Steps for Beef and Onion Filling:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps1)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <h5>Steps for Corn Topping:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps2)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <h5>Steps for Assembly:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps3)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <h5>Steps for Baking:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps4)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <a href=@reference>Reference</a>
+
+    </div>
+</body>
+
+
+
+@*
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
+*@
+

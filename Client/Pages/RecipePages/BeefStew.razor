@@ -1,0 +1,167 @@
+﻿@page "/beefStew"
+
+<PageTitle>Beef Stew</PageTitle>
+
+
+<div class="text-center">
+
+    @{
+        var title = "Beef Stew";
+        var description = "";
+        var reference = "https://www.allrecipes.com/recipe/14685/slow-cooker-beef-stew-i/";
+
+        var ingredients = new string[]
+        {
+        "2 pounds beef, cut into 1-inch pieces (roast or chuck, trimmed of excess fat)",
+        "1/3 cup all purpose flour",
+        "1 1/2 teaspoons salt",
+        "-----------------",
+        "1 onion, chopped",
+        "2 cloves garlic minced",
+        "-----------------",
+        "1 1/2 cups beef broth (chicken broth works too)",
+        "1 Tablespoon Worcestershire sauce",
+        "1/2 cup red wine",
+        "-----------------",
+        "3 potatoes, coarsely cut into 3/4 inch pieces",
+        "4 carrots, coarsely cut into 3/4 inch pieces",
+        "1 stalk celery, chopped",
+        "-----------------",
+        "2-3 bay leafs",
+        "1 Tablespoon paprika",
+        "2 1/2 teaspoons black pepper",
+        "2 teaspoons onion powder",
+        "1 teaspoon dried basil",
+        "1 teaspoon dried parsley",
+        "1 teaspoon celery seed",
+        "1/2 teaspoon dried rosemary",
+        "1/4 teaspoons dried oregano", 
+        "1/4 teaspoon cayenne pepper", 
+        };
+
+        var steps1 = new string[]
+        {
+        "Cut beef into 1 inch pieces and place in a bowl.",
+        "Salt the beef (smoked works well) and let rest for 15-20 minutes.",
+        "Dry beef with paper towel.",
+        "Coat beef with flour and salt, and let rest 5 more minutes.",
+        "Sauté coated beef in cast iron pot or dutch oven in 1-2 tablespoons olive oil until browned on at least two sides.",
+        "Remove beef from pan and let rest."
+        };
+
+        var steps2 = new string[]
+        {
+        "Add chopped onion to pot and sauté and soften (10-15 minutes).",
+        "Add garlic towards the end of the sauté."
+        };
+
+        var steps3 = new string[]
+        {
+        "Mix broth with 1 tablespoon Worcestershire and 1/2 cup red wine. ",
+        "Pour into hot skillet to deglaze. Cook off the alcohol in the wine."
+        };
+
+        var steps4 = new string[]
+        {
+        "Add beef back to the pot.",
+        "Add remaining ingredients."
+        };
+        var steps5 = new string[]
+        {
+        "Place covered pot in oven at 275F to cook for roughly 5 hours or until beef is pull apart tender.",
+        "Alternatively, cook in crock pot on on HIGH for 4-6 hours or LOW for 10-12 hours.",
+        "(Note - beef will tighten up and toughen before it loosens up.  Continue to cook until it becomes tender.)",
+        "Adjust seasonings to taste."
+        };
+ 
+    }
+</div>
+
+
+
+<body>
+    <div>
+        <h1>@title</h1>
+        <p></p>
+
+        <!-- 
+        <h5>Description:</h5>
+        <div>@description</div>
+        <p></p>
+        -->
+
+        <h5>Ingredients:</h5>
+        <div>
+            <ul>
+                @foreach (var ingredient in ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+
+        <h5>Steps:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps1)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps2)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps3)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps4)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps5)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <a href=@reference>Reference</a>
+
+    </div>
+</body>
+
+
+
+@*
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
+*@
+

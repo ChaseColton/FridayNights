@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<!--
+<h1>Hello, Jamet & Tiago (from Chase)!</h1>
+
+Welcome to your new app.
+-->
+@{
+    var state2025 = " https://app.matchplay.events/tournaments/230537";
+    var stateWomen2025 = " https://app.matchplay.events/tournaments/231202";
+}
+
+  <div class="text-left">
+
+    <ul style="list-style: none;">
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/pinball">Pinball Notes</a></li>
+        <li><a href="/pinballIssues">Pinball Machine Issues</a></li>
+
+
+        <li><a href=@state2025>2025 IOWA IFPA State Championship</a></li>
+        <li><a href=@stateWomen2025>2025 Iowa IFPA Women's Championship</a></li>
+       
+
+    </ul>
+
+    </div>

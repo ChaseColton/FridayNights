@@ -1,0 +1,101 @@
+﻿@page "/whiteChili"
+
+<PageTitle>White Chili</PageTitle>
+
+
+
+
+<div class="text-center">
+
+    @{
+
+        var title = "White Chili";
+        var description = "This creamy white chicken chili is super easy in the crockpot. " +
+        "It's very good too without the chicken (as a vegetarian option).  " +
+        "To deepen the flavor (though it takes more time), I cook the onions down in butter (maybe 15 minutes) until they soften. " +
+        "Also instead of diced green chiles from a can, I dice sweet peppers and cook at medium high heat in olive oil until they start to blister. ";
+        var reference = "https://www.thechunkychef.com/slow-cooker-creamy-white-chicken-chili";
+
+        var ingredients = new string[]
+        {
+        "1 lb boneless skinless chicken breasts trimmed of excess fat",
+        "1 yellow onion diced",
+        "2 cloves garlic minced",
+        "24 oz chicken broth",
+        "2 (15 oz) cans cans Great Northern beans drained and rinsed",
+        "2 (4 oz) cans cans diced green chiles",
+        "15 oz can whole kernel corn drained (frozen works too)",
+        "1/2 teaspoon salt",
+        "1/2 teaspoon black pepper",
+        "1 teaspoon cumin",
+        "3/4 teaspoon oregano",
+        "1/2 teaspoon chili powder",
+        "1/4 teaspoon cayenne pepper",
+        "4 oz cream cheese softened (or whipped)",
+        "1/4 cup half and half"
+        };
+
+
+        var steps = new string[]
+        {
+        "Add chicken breasts to bottom of slow cooker",
+        "Top with salt, pepper, cumin, oregano, chili powder, and cayenne pepper.",
+        "Top that with diced onion, minced garlic, great Northern beans, green chiles, corn, and chicken broth.",
+        "Cover and cook on LOW for 8 hours or HIGH for 3-4 hours.",
+        "Remove chicken to large mixing bowl, shred, then return to slow cooker.",
+        "Add cream cheese and half and half, stir, then cover and cook on HIGH for 15 minutes, or until chili is creamy and slightly thickened.",
+        "Stir well and serve with desired toppings."
+        };
+    }
+</div>
+
+
+
+<body>
+    <div>
+        <h1>@title</h1>
+        <p></p>
+
+        <h5>Description:</h5>
+        <div>@description</div>
+        <p></p>
+
+
+        <h5>Ingredients:</h5>
+        <div>
+            <ul>
+                @foreach (var ingredient in ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+
+        <h5>Steps:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <a href=@reference>Reference</a>
+
+    </div>
+</body>
+
+
+
+@*
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
+*@
+

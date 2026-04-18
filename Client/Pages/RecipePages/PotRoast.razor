@@ -1,0 +1,163 @@
+﻿@page "/potRoast"
+
+<PageTitle>Pot Roast</PageTitle>
+
+
+<div class="text-center">
+
+    @{
+        var title = "Pot Roast";
+        var description = "Michael Symon recipe.";
+        var reference = "https://www.foodnetwork.com/recipes/michael-symon/pot-roast-10078977";
+
+        var ingredients = new string[]
+        {
+        "4 pounds beef (roast or chuck, trimmed of excess fat), whole or cut into VERY large chunks",
+        "2 teaspoons celery seed",
+        "kosher salt",
+        "black pepper",
+        "-----------------",
+        "olive oil, for drizzling",
+        "-----------------",
+        "1 large yellow onion, chopped",
+        "4 carrots, coarsely cut into 3/4 inch pieces",
+        "4 stalks celery, chopped",
+        "-----------------",
+        "10-12 cloves garlic, peeled and smashed",
+        "1 bundle fresh thyme",
+        "-----------------",
+        "4 Tablespoons tomato paste",
+        "-----------------",
+        "1 cup red wine",
+        "-----------------",
+        "2-4 cups chicken broth (beef broth works too)",
+        };
+
+        var steps1 = new string[]
+        {
+        "Sprinkle meat liberally with celery seeds, salt, and pepper up to 1 day in advance.",
+        "Remove the meat from the refrigerator 45 minutes to 1 hour before cooking to take the chill off.",
+        "Preheat the oven to 275F."
+        };
+
+        var steps2 = new string[]
+        {
+        "Heat a large Dutch oven over high heat.",
+        "Add a drizzle of olive oil, followed by the beef.",
+        "Sear the meat until golden brown and crusty, 3 to 5 minutes on each side.",
+        "Set aside."
+        };
+
+        var steps3 = new string[]
+        {
+        "Add the celery, carrots and onions to the Dutch oven, along with a pinch of salt.",
+        "Brown the vegetables, about 3 minutes",
+        "Add garlic and thyme and cook 1 to 2 minutes longer.",
+        "Stir in tomato paste and toast it until it's rust colored, 1 to 2 minutes."
+        };
+
+        var steps4 = new string[]
+        {
+        "Add the wine to deglaze the pot, scraping up the browned bits on the bottom.",
+        "Add the meat back in, then add enough stock to cover the roast most of the way.",
+        "Bring the liquid to a simmer"
+        };
+
+        var steps5 = new string[]
+        {
+        "Place covered pot in oven at 275F to cook for roughly 4 hours or until beef is pull apart tender.",
+        "(Note - beef will tighten up and toughen before it loosens up.  Continue to cook until it becomes tender.)",
+        "Adjust seasonings to taste."
+        };
+ 
+    }
+</div>
+
+
+
+<body>
+    <div>
+        <h1>@title</h1>
+        <p></p>
+
+        <!-- 
+        <h5>Description:</h5>
+        <div>@description</div>
+        <p></p>
+        -->
+
+        <h5>Ingredients:</h5>
+        <div>
+            <ul>
+                @foreach (var ingredient in ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+
+        <h5>Steps:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps1)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps2)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps3)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps4)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps5)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <a href=@reference>Reference</a>
+
+    </div>
+</body>
+
+
+
+@*
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
+*@
+

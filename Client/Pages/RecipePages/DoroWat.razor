@@ -1,0 +1,97 @@
+﻿@page "/doroWat"
+
+<PageTitle>DoroWat</PageTitle>
+
+
+
+
+<div class="text-center">
+
+    @{
+
+        var title = "Doro Wat (Spiced Chicken Stew)";
+        var description = "Doro Wat (Ethiopian Spiced Chicken) - The national dish of Ethiopia";
+        var reference = "https://www.daringgourmet.com/doro-wat-spicy-ethiopian-chicken-stew/";
+
+        var ingredients = new string[]
+        {
+        "2.5 to 3 lbs chicken thighs cut into 1 inch pieces (or 3 chicken breasts, cut into 1/2 inch pieces)",
+        "2 Tablespoons fresh lemon juice",
+        "2 Tablespoons niter kibbeh (or butter)",
+        "3 Tablespoons butter",
+        "2 Tablespoons extra virgin olive oil",
+        "3 cups yellow onions finely minced to a chunky puree in food processor",
+        "1 Tablespoons finely minced garlic",
+        "1 Tablespoons finely minced ginger",
+        "1/4 cup Ethiopian berbere",
+        "1 1/2 teaspoons salt",
+        "1/2 cup Tej Ethiopian honey wine (if you have it) or white wine mixed with 1 teaspoon honey",
+        "1 cup chicken stock",
+        "4 hard-boiled eggs pierced all over with fork about 1/4 inch deep (I use about a dozen quail eggs instead)"
+        };
+
+
+        var steps = new string[]
+        {
+        "Place the chicken pieces in a bowl and pour lemon juice over. Let sit at room temperature for at least 30 minutes.",
+        "Heat the niter kibbeh or butter along with the olive oil in a Dutch oven. Add the onions and saute, covered, over low heat for 45 minutes, stirring occasionally.",
+        "Add the garlic, ginger, and 1 tablespoon butter and continue to saute, covered, for another 20 minutes, stirring occasionally.",
+        "Add the berbere and the 2 remaining tablespoons of butter and saute, covered, over low heat for another 30 minutes, stirring occasionally.",
+        "Add the chicken, broth, salt and wine and bring to a boil. Reduce the heat to low, cover, and simmer for 45 minutes, stirring occasionally.",
+        "Adjust the seasonings, adding more berbere according to heat preference. Add the boiled eggs and simmer on low heat, covered, for another 15 minutes.",
+        "Half or quarter the eggs and arrange on the plates with the stew. Serve hot with injera, bread or rice."
+        };
+    }
+</div>
+
+
+
+
+<body>
+    <div>
+        <h1>@title</h1>
+        <p></p>
+
+        <h5>Description:</h5>
+        <div>@description</div>
+        <p></p>
+
+
+        <h5>Ingredients:</h5>
+        <div>
+            <ul>
+                @foreach (var ingredient in ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+
+        <h5>Steps:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <a href=@reference>Reference</a>
+
+    </div>
+</body>
+
+
+
+@*
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
+*@
+

@@ -1,0 +1,51 @@
+﻿@page "/test"
+@inject HttpClient Http
+@using BlazorApp.Shared  
+
+<h3>IFPA World Player Rankings</h3>
+
+@if (players == null)
+{
+    <p>Loading…</p>
+}
+
+else
+{
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Country</th>
+                <th>WPPR</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in players)
+            {
+                <tr>
+                    <td>@p.Rank</td>
+                    <td>@p.FirstName @p.LastName</td>
+                    <td>@p.Country</td>
+                    <td>@p.WpprPoints</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<IfpaPlayerRanking>? players;
+
+    protected override async Task OnInitializedAsync()
+    {
+       
+        players =
+            await Http.GetFromJsonAsync<List<IfpaPlayerRanking>>(
+                "api/ifpa/rankings");
+
+
+               // https://localhost:5001/api/ifpa/rankings
+               // http://localhost:5002/test
+    }
+}

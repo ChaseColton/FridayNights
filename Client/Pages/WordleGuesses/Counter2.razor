@@ -1,0 +1,238 @@
+﻿@page "/counter2"
+@inject NavigationManager NavManager
+
+
+<PageTitle>Counter2</PageTitle>
+
+
+
+<h1>First Guess</h1>
+
+@*
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+<EditForm Model="@model" OnValidSubmit="@HandleValidSubmit">
+    <label for="letter1Input">Enter Letter1:</label>
+    <InputText id="letter1Input" @bind-Value="model.Letter1" />
+    <button type="submit">Submit</button>
+
+     <label for="letter2Input">Enter Letter2:</label>
+    <InputText id="letter2Input" @bind-Value="model.Letter2" />
+    <button type="submit">Submit</button> 
+</EditForm>
+*@
+
+
+<EditForm Model="@model" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+
+        <div class="row g-3">
+            <div class="col-md-4">
+
+                <label for="letter1Input">Letter1:</label>
+                <InputText id="letter1Input" @bind-Value="model.Letter1" />
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter1InWord">In Word:</label>
+                <InputText id="letter1InWord" @bind-Value="model.Letter1InWord" />
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter1InPosition">In Postion:</label>
+                <InputText id="letter1InPosition" @bind-Value="model.Letter1InPosition" />
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+
+                <label for="letter2Input">Letter2:</label>
+                <InputText id="letter2Input" @bind-Value="model.Letter2" />
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter2InWord">In Word:</label>
+                <InputText id="letter2InWord" @bind-Value="model.Letter2InWord" />
+                @page "/readfile"
+                @inject HttpClient Http
+
+                <h3>Text File Content</h3>
+
+                @if (items == null)
+                {
+                    <p><em>Loading...</em></p>
+                }
+                else
+                {
+                    <ul>
+                        @foreach (var item in items)
+                        {
+                            <li>@item</li>
+                        }
+                    </ul>
+                }
+
+                @code {
+                    private List<string>? items;
+
+                    protected override async Task OnInitializedAsync()
+                    {
+                        // Fetch the file content from wwwroot/data.txt
+                        // Do not use a leading '/' for the URL if the file is in the root wwwroot folder
+                        var fileContent = await Http.GetStringAsync("sgb-words.txt");
+
+                        // Split the content into lines (assuming each line is an item)
+                        // You might need more complex parsing based on your file format (e.g., CSV)
+                        items = fileContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                    }
+                }
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter2InPosition">In Postion:</label>
+                <InputText id="letter2InPosition" @bind-Value="model.Letter2InPosition" />
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+
+                <label for="letter3Input">Letter1:</label>
+                <InputText id="letter3Input" @bind-Value="model.Letter3" />
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter3InWord">In Word:</label>
+                <InputText id="letter3InWord" @bind-Value="model.Letter3InWord" />
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter3InPosition">In Postion:</label>
+                <InputText id="letter3InPosition" @bind-Value="model.Letter3InPosition" />
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+
+                <label for="letter4Input">Letter4:</label>
+                <InputText id="letter4Input" @bind-Value="model.Letter4" />
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter4InWord">In Word:</label>
+                <InputText id="letter4InWord" @bind-Value="model.Letter4InWord" />
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter4InPosition">In Postion:</label>
+                <InputText id="letter41InPosition" @bind-Value="model.Letter4InPosition" />
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+
+                <label for="letter5Input">Letter5:</label>
+                <InputText id="letter5Input" @bind-Value="model.Letter5" />
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter5InWord">In Word:</label>
+                <InputText id="letter5InWord" @bind-Value="model.Letter5InWord" />
+            </div>
+            <div class="col-md-4">
+
+                <label for="Letter5InPosition">In Postion:</label>
+                <InputText id="letter5InPosition" @bind-Value="model.Letter5InPosition" />
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+@* 
+    <div class="form-group">
+        <label for="letter2Input">Enter Letter2:</label>
+        <InputText id="letter2Input" @bind-Value="model.Letter2" />
+    </div>
+ *@
+    <button type="submit" class="btn btn-primary mt-3">Register</button>
+</EditForm>
+
+
+
+
+
+@if (!string.IsNullOrEmpty(outputMessage))
+{
+    <p>@outputMessage</p>
+}
+
+
+@code {
+
+
+
+
+
+
+
+
+
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+
+
+    private InputModel model = new InputModel();
+    private string outputMessage;
+
+    private void HandleValidSubmit()
+    {
+        outputMessage = "Hello, " + model.Letter1 + "!";
+        //outputMessage = "Hello, " + model.Letter2 + "!";
+        // Further processing logic here
+
+
+    }
+
+
+    public class InputModel
+    {
+        public string Letter1 { get; set; }
+        public string Letter2 { get; set; }
+        public string Letter3 { get; set; }
+        public string Letter4 { get; set; }
+        public string Letter5 { get; set; }
+
+        public string Letter1InWord { get; set; }
+        public string Letter2InWord { get; set; }
+        public string Letter3InWord { get; set; }
+        public string Letter4InWord { get; set; }
+        public string Letter5InWord { get; set; }
+
+        public string Letter1InPosition { get; set; }
+        public string Letter2InPosition { get; set; }
+        public string Letter3InPosition { get; set; }
+        public string Letter4InPosition { get; set; }
+        public string Letter5InPosition { get; set; }
+    }
+}
+
+

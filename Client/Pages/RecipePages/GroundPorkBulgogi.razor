@@ -1,0 +1,158 @@
+﻿@page "/groundPorkBulgogi"
+
+<PageTitle>Ground Pork Bulgogi</PageTitle>
+
+
+<div class="text-center">
+
+    @{
+        var title = "Ground Pork Bulgogi";
+        var description = "Aaron and Claire recipe.";
+        var reference = "https://aaronandclaire.com/ground-pork-bulgogi/";
+
+        var ingredients = new string[]
+        {
+        "1 lb ground pork",
+        "1/2 yellow onion",
+        "2 green onions, white part",
+        "1 Tablespoon neutral-tasting oil",
+        "-----------------",
+        "2 Tablespoons gochujang (or gochugaru flakes)",
+        "2 1/3 Tablespoons soy sauce",
+        "1.5 Tablespoons sugar",
+        "1.5 Tablespoons mirin",
+        "2 Tablespoons oyster sauce",
+        "2 Tablespoons minced garlic",
+        "1 teaspoon minced ginger",
+        "black pepper, to taste",
+        "pinch of MSG (optional)",
+        "-----------------",
+        "1/2 Tablespoon toasted sesame oil",
+        "2 green onions, green part, to garnish",
+        "1 mild red chili, for color",
+        "1 green chili, for color",
+        "toasted sesame seeds, to garnish",
+        "-----------------",
+        "5 cups cooked rice"
+
+        };
+
+        var steps1 = new string[]
+        {
+        "Grate a small knob of ginger (1 teaspoon).",
+        "Thinly slice the chilies (if using).",
+        "Thinly slice the green onions, separating the whites and greens.",
+        "Finely chop half an onion.",
+        };
+
+        var steps2 = new string[]
+        {
+        "In a small container, mix together gochugaru (or gochugaru flakes), soy sauce, sugar, mirin, oyster sauce, minced garlic, minced ginger, black pepper to taste, and pinch of MSG (if using).",
+        };
+
+        var steps3 = new string[]
+        {
+        "In a wok (or pan), heat the oil (1 tbsp) over medium-high heat. ",
+        "Once it's heated, add the onion and the white parts of the green onions. ",
+        "Saute for 3 minutes or until they get a little bit of color.",
+        "Increase the heat to high. ",
+        "Add the pork then break it up and cook for 3 to 4 minutes. ",
+        "Once the pork is cooked, add the sauce. ",
+        "Toss together for 3 minutes or until most of the liquid has evaporated.",
+        "Turn the heat off. ",
+        "Add most of the chili peppers (if using), green onions, and sesame oil (1/2 tbsp). (save some for topping)",
+        "Give it a final mix."
+        };
+
+        var steps4 = new string[]
+        {
+        "To serve, divide  rice into bowls. ",
+        "Add a generous amount of bulgogi. ",
+        "Garnish with some extra green onions, sesame seeds, and chili peppers (if using)."
+        };
+
+ 
+    }
+</div>
+
+
+
+<body>
+    <div>
+        <h1>@title</h1>
+        <p></p>
+
+        <!--  
+        <h5>Description:</h5>
+        -->
+        <div>@description</div>
+        <p></p>
+        
+
+        <h5>Ingredients:</h5>
+        <div>
+            <ul>
+                @foreach (var ingredient in ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+
+        <h5>Steps:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps1)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps2)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps3)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+        <h5>---------------</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps4)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+
+
+        <a href=@reference>Reference</a>
+
+    </div>
+</body>
+
+
+
+@*
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
+*@
+

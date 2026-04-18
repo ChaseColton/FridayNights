@@ -1,0 +1,96 @@
+﻿@page "/beefBulgogi"
+
+<PageTitle>BeefBulgogi</PageTitle>
+
+
+
+
+<div class="text-center">
+
+    @{
+
+        var title = "Beef Bulgogi";
+        var description = "This is by far the best bulgogi recipe.  The kiwi tenderizes the meat.";
+        var reference = "https://kimchimari.com/bulgogi-korean-beef-bbq";
+
+        var ingredients = new string[]
+        {
+        "1 lb thinly sliced sirloin (top sirloin or chuck)",
+        "2 teaspoons toasted sesame seeds",
+        "3 Tablespoons soy sauce",
+        "2 Tablespoons light brown sugar",
+        "1 Tablespoons honey",
+        "2 Tablespoons rice cooking wine (or mirin)",
+        "1 Tablespoons sesame oil",
+        "2 Tablespoons minced garlic",
+        "1 teaspoons ground black pepper",
+        "1 Tablespoons chopped green onion",
+        "2 Tablespoons kiwi chopped"
+        };
+
+
+        var steps = new string[]
+        {
+        "Partially freeze the meat (this will allow you to thinly slice it well).",
+        "Thinly slice the meat.",
+        "Lightly toast the sesame seeds.",
+        "Add all ingredients to a small bowl and mix.",
+        "Add meat and marinade to a gallon plastic bag and let marinade 30 minutes to overnight " +
+        "(depending on how tenderized you want the meat to be).",
+        "Arrange meat on a wire cooling rack (so it doesn't fall through).  " +
+        "I use two - one on top and on bottom so I can flip it on the grill. ",
+        "Barbeque until cooked (cooks very fast)."
+        };
+    }
+</div>
+
+
+
+<body>
+    <div>
+        <h1>@title</h1>
+        <p></p>
+
+        <h5>Description:</h5>
+        <div>@description</div>
+        <p></p>
+
+
+        <h5>Ingredients:</h5>
+        <div>
+            <ul>
+                @foreach (var ingredient in ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+
+        <h5>Steps:</h5>
+        <div>
+            <ol>
+                @foreach (var step in steps)
+                {
+                    <li>@step</li>
+                }
+            </ol>
+        </div>
+
+        <a href=@reference>Reference</a>
+
+    </div>
+</body>
+
+
+
+@*
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
+*@
+

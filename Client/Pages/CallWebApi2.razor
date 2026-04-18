@@ -1,0 +1,26 @@
+﻿@page "/CallWebApi2"
+@using BlazorApp.Shared
+@inject IHttpClientFactory ClientFactory
+
+
+<h1>Call web API from a server-side Razor component2</h1>
+
+
+@code {
+    private async Task GetPrivateData()
+    {
+        var client = ClientFactory.CreateClient("GitHubClient");
+
+        // GitHub recommends "Bearer" for fine-grained tokens (standard in 2026)
+        // Use "token" for legacy classic tokens
+        string mySecretToken = "ghp_your_token_here";
+        client.DefaultRequestHeaders.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", mySecretToken);
+
+        var response = await client.GetAsync("ChaseColton"); // Fetches authenticated user profile
+        if (response.IsSuccessStatusCode)
+        {
+            var user = await response.Content.ReadFromJsonAsync<GitHubUser>();
+        }
+    }
+}

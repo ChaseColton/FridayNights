@@ -1,0 +1,157 @@
+﻿@page "/ironMaiden"
+
+<PageTitle>Iron Maiden</PageTitle>
+
+
+
+    <div class="text-left">
+
+
+    @{
+        var rulesheet = "https://tiltforums.com/t/iron-maiden-pinball-rulesheet/3787";
+        var tutoriaPAPA = "https://youtu.be/zaCEffQkj4o?si=nhwxzr2i_Qy8M8TR";
+        var tutorialTravisMurie = "https://www.youtube.com/watch?v=0KJNAmZX1-I";
+    
+    }
+
+
+    <h2>Iron Maiden Modes</h2>
+
+   
+    <h5><b>Fear of the Dark</b></h5>
+    <p>
+        <li>Hit one of the 4 lit purple shots then rip a spinner. </li>
+        <li>Do this 3 times then shoot up the middle for soul shard.</li>
+        <i>
+            Note - after hitting any purple shot, the right ramp purple shot will stay lit.
+            Hit it before hitting a spinner to double the value of the spinner rip.
+        </i>
+
+    </p>
+    
+    <h5><b>Flight of Icarus</b></h5>
+    <p>
+        <li>Shoot alternating lit ramps (yellow) as many times as possible during the timer.</li>
+        <li>Once you've earned 20M points the Soul Shard is qualified.</li>
+        <li>Shoot the bullseye target to end the mode early and light the Soul Shard OR you "risk it" and play it out like normal.</li>
+    </p>
+
+    <h5><b>Rime of the Ancient Mariner</b></h5>
+    <p>
+        <li>Center shot is lit (to shoot down the albatross) and collect a hurry-up counting down from 1M.</li>
+        <li>Shoot center shot to lock in this value and start a 2-ball multiball.</li>
+        <li>Shoot either of the two shots on the left side of the playfield to move them by one shot towards the center for 20 seconds.</li>
+        <li>Shoot the bullseye once the shots are centered to score the jackpot.</li>
+        <li>Repeat the process for the right side of the playfield (including the drop targets) to qualify the Soul Shard.</li>
+    </p>
+
+    <h5><b>Hallowed Be Thy Name</b></h5>
+    <p>
+        <li>Shoot one of the 4 lit orange shots (3M).</li>
+        <li>Shoot captive ball (5M).</li>
+        <li>Shoot one of the remaining lit orange shots (3M).</li>
+        <li>Shoot all three drop targets (10M).</li>
+        <li>Shoot one of the remaining lit orange shots (3M).</li>
+        <li>Shoot bullseye target for 10M + 1M per time remaining. (note - this lights the Soul Shard).</li>
+    </p>
+
+    <h5><b>Aces High</b></h5>
+    <p>
+        <li>Fighters - shoot any blue shots to defeat fighters. Hit four to advance.</li>
+        <li>Bombers - Shoot either ramp to "lock on" a bomber then shoot the center bullseye target for a jackpot.</li>
+        <li>Repeat the above for the other ramp.</li>
+        <li>
+            The Ace - Hit the strobing shot, then the center bullseye within 5 seconds for a major jackpot,
+            its value boosted by how close you hit the bullseye
+        </li>
+    </p>
+
+    <h5><i>Soul Shard</i></h5>
+    <p>
+        Complete any Eddie battle mode to light the bullseye target for 10 seconds to collect a Soul Shard.
+        Worth a hurry-up starting at 20% of the points earned during the battle
+        (x2 or x3 depending on the accuracy of the bullseye target hit).
+    
+    </p>
+    <!--
+    <h5><b>Aces High</b></h5>
+    <h6><i>Phase 1: Fighters</i></h6>
+        <p>
+            Shoot any blue-lit shots to defeat fighters; hit four to advance.
+        </p>
+    <h6><i>Phase 2: Bombers</i></h6>
+        <p>
+            Hit either ramp to "lock on," then shoot the center bullseye target for a jackpot;
+            repeat for the other ramp.
+        </p>
+    <h6><i>Phase 3: The Ace</i></h6>
+        <p>
+            Hit the strobing shot, then the center bullseye within 5 seconds for a major jackpot,
+            its value boosted by how close you hit the bullseye.
+        </p>
+    <h6><i>Rewards</i></h6>
+        <p>
+            Qualifies a Soul Shard and can award an Add-a-Ball via Mystery (at the orb).
+        </p>
+    -->
+
+
+    <h2>Iron Maiden Multiballs</h2>
+    <h5><b>Mummy Multiball</b></h5>
+    <p>
+        <h6>Qualifying:</h6>
+        <li>Shoot captive ball twice (5 times for subsequent multiballs) to light the Mummy Lock (center ramp).</li>
+        <li>After locking the ball, spell MUMMY at the captive ball with 5 more shots to qualify Mummy Multiball.</li>
+        <li>Shoot captive ball one more time to start Mummy Multiball.</li>
+        <!-- <li><i>Note - 3rd and subsequent Mummy Multiballs require two hits per MUMMY letter.</i></li> -->
+    </p>
+    <p>
+        <h6>Play:</h6>
+        <li>Shoot switches to qualify captive ball jackpot. </li>
+        <li>Each jackpot spots a MUMMY letter. </li>
+        <li>Spell MUMMY to light Super Jackpot at the bullseye target. </li>
+        <li><i>Note - shoot yellow shots for an add a ball (you can get up to 3 add a balls).</i></li>
+    </p>
+
+
+    <h5><b>Trooper Multiball</b></h5>
+    <p>
+        <h6>Qualifying:</h6>
+        <li>Complete the drop targets bank (twice the first time) to light the green arrow shots.</li>
+        <li>Hit the green arrow orbit shot(s) to virtually lock a ball.</li>
+        <li>Lock 3 balls to start Trooper Multiball.</li>
+        <!-- <li><i>Note - 3rd and subsequent Mummy Multiballs require two hits per MUMMY letter.</i></li> -->
+    </p>
+    <p>
+        <h6>Play:</h6>
+        <li>Shoot blue shots for 1x jackpot ( will unlight when collected). </li>
+        <li>Collecting 3 jackpots lights the first Super Jackpot at the corresponding target.</li>
+        <li>Scoring the Super Jackpot relights collected jackpots with +1x scoring, while uncollected shots remain lit at their previous scoring level. </li>
+        <li>Jackpot shot color progression denoting which shots are multiplied at different levels is reverse rainbow (blue, green, etc). </li>
+        <li>Completing the drop targets during Trooper Multiball will light the bullseye target to fire the cannon (indicated by the rainbow flashing arrow). </li>
+        <li><i>Note - You can collect multiple cannon shots in a single multiball.</i></li>
+    </p>
+
+
+
+    <p>
+    <h2>Iron Maiden Playfield:</h2>
+    <img src="images/IM-Pro-Playfield.jpg" alt="Iron Maiden Playfield" style="width:200px; height:auto;" />
+    </p>
+
+
+
+    <h5>References:</h5>
+    <p>
+        <li><a href=@rulesheet>Iron Maiden Pinball Rulesheet</a></li>
+        <li><a href=@tutoriaPAPA>Iron Maiden Pinball Tutorial (PAPA Pinball)</a></li>
+        <li><a href=@tutorialTravisMurie>Iron Maiden Pinball Simplified (Travis Murie)</a></li>
+    </p>
+
+
+    
+    
+    
+
+ 
+    </div>
